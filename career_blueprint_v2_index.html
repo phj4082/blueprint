@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화학(합성) 출신 LCD 재료 엔지니어의 전환 청사진 2026→2036</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+:root{
+  --bg:#F6F7F9; --panel:#FFFFFF; --ink:#152238; --ink-2:#4B5566; --line:#D8DDE5; --line-2:#EDF0F4;
+  --p0:#8D939C; --p1:#C9A227; --p2:#C65D3B; --p3:#6C4E9E; --p4:#1E7F8C; --px:#DCE0E6;
+  --hl:#FFF4CF; --focus:#1E7F8C;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;font-size:15.5px;line-height:1.65;word-break:keep-all}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+.hero{padding:52px 0 28px;background:var(--panel);border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(30px,4.4vw,46px);line-height:1.18;letter-spacing:-.02em;margin:0 0 14px;font-weight:800;max-width:20ch}
+.hero .lead{font-size:17px;color:var(--ink-2);max-width:62ch;margin:0 0 24px}
+.principles{margin:0 0 26px;padding:0;list-style:none;border-top:1px solid var(--line)}
+.principles li{display:grid;grid-template-columns:170px 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--line)}
+.principles b{font-size:15.5px}
+.principles span{color:var(--ink-2);font-size:14.5px;max-width:70ch}
+@media (max-width:640px){.principles li{grid-template-columns:1fr;gap:4px}}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap}
+.btn{cursor:pointer;border:1px solid var(--ink);background:var(--panel);color:var(--ink);border-radius:8px;padding:8px 14px;font-size:14px;font-family:inherit}
+.btn.fill{background:var(--ink);color:#fff}
+.btn:hover{background:var(--line-2)} .btn.fill:hover{background:#0f1a2e}
+
+.spine{padding:28px 0 6px}
+.spine-bar{display:flex;height:22px;border-radius:6px;overflow:hidden}
+.spine-bar i{display:block;height:100%}
+.spine-ticks{display:flex;margin-top:8px;font-size:12.5px;color:var(--ink-2)}
+.spine-ticks div{padding-right:6px;border-left:1px solid var(--line);padding-left:6px;line-height:1.35}
+.spine-ticks b{display:block;color:var(--ink);font-size:13.5px}
+.spine-legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink-2);margin-top:14px}
+.spine-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+.nav{position:sticky;top:0;z-index:5;background:rgba(246,247,249,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:8px 0}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:6px;overflow-x:auto}
+.nav a{white-space:nowrap;text-decoration:none;font-size:12.5px;padding:5px 9px;border-radius:999px;border:1px solid var(--line);background:var(--panel)}
+.nav a:hover{border-color:var(--ink)}
+@media (min-width:900px){.nav ul{flex-wrap:wrap}}
+section,details.cat,details.sub{scroll-margin-top:72px}
+
+section{padding:36px 0 6px}
+h2.sec{font-size:24px;letter-spacing:-.01em;margin:0 0 6px}
+p.sub{margin:0 0 18px;color:var(--ink-2);max-width:72ch}
+
+.tl-scroll{overflow-x:auto;padding-bottom:6px}
+.tl{display:grid;grid-template-columns:128px repeat(5,minmax(178px,1fr));gap:5px;min-width:1030px}
+.tl .hd{padding:10px 12px;border-radius:8px;color:#fff;line-height:1.35}
+.tl .hd b{display:block;font-size:14px}
+.tl .hd span{font-size:12.5px;opacity:.92}
+.tl .hd.p0{background:var(--p0)}.tl .hd.p1{background:var(--p1)}.tl .hd.p2{background:var(--p2)}.tl .hd.p3{background:var(--p3)}.tl .hd.p4{background:var(--p4)}
+.tl .lane{padding:10px 12px;font-weight:700;font-size:13.5px;background:var(--ink);color:#fff;border-radius:8px;display:flex;align-items:center;line-height:1.35}
+.tl .cell{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:13px;line-height:1.5;cursor:pointer;text-align:left;font-family:inherit;color:var(--ink);display:block;width:100%}
+.tl .cell:hover{border-color:var(--ink)}
+.tl .cell b{display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:2px;font-weight:600}
+.tl .corner{background:transparent}
+.legend-note{font-size:13px;color:var(--ink-2);margin-top:8px}
+
+.cats{display:grid;gap:12px;padding:8px 0 0}
+details.cat{background:var(--panel);border:1px solid var(--line);border-radius:12px}
+details.cat>summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;gap:14px;align-items:flex-start}
+details.cat>summary::-webkit-details-marker{display:none}
+.cat .idx{flex:none;width:34px;height:34px;border-radius:8px;background:var(--ink);color:#fff;font-weight:800;display:grid;place-items:center;font-size:15px}
+.cat .ttl{flex:1}
+.cat .ttl h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.cat .ttl p{margin:3px 0 0;color:var(--ink-2);font-size:14px;max-width:80ch}
+.cat .chev{flex:none;color:var(--ink-2);font-size:13px;padding-top:6px}
+details.cat:not([open])>summary .chev::before{content:"펼치기"}
+details.cat[open]>summary .chev::before{content:"접기"}
+.cat-body{padding:0 20px 18px;border-top:1px solid var(--line-2)}
+details.sub{border-top:1px solid var(--line-2)}
+details.sub:first-of-type{border-top:0}
+details.sub>summary{list-style:none;cursor:pointer;padding:13px 4px;font-weight:700;font-size:15px;display:flex;justify-content:space-between;gap:10px}
+details.sub>summary::-webkit-details-marker{display:none}
+details.sub>summary::after{content:"+";color:var(--ink-2);font-weight:400;flex:none}
+details.sub[open]>summary::after{content:"−"}
+.sub-body{padding:0 4px 16px;font-size:14.5px}
+.sub-body p{margin:8px 0;max-width:80ch}
+.sub-body ul,.sub-body ol{margin:6px 0 10px 20px;padding:0}
+.sub-body li{margin:5px 0;max-width:80ch}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0 14px}
+th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left;line-height:1.5}
+th{background:var(--line-2);font-weight:700}
+td.k{font-weight:700;white-space:nowrap}
+.tbl{overflow-x:auto}
+.tag{display:inline-block;font-size:11.5px;border-radius:5px;padding:1px 7px;background:var(--line-2);color:var(--ink-2);margin:0 4px 0 0;vertical-align:1px;font-weight:600}
+.tag.hot{background:#F9E3D9;color:#8A3A1E}
+.tag.opt{background:#DFF0EC;color:#155E67}
+.note{border-left:4px solid var(--p1);background:var(--hl);padding:10px 14px;margin:10px 0;font-size:14px;max-width:none}
+.note.warn{border-left-color:var(--p2);background:#FBEDE7}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin:10px 0}
+.box{border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.box h4{margin:0 0 6px;font-size:15px}
+.box p{margin:0;font-size:14px;color:var(--ink-2)}
+
+.check{display:grid;gap:6px}
+.check label{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);font-size:14px;cursor:pointer}
+.check input{margin-top:4px;flex:none}
+.check h4{margin:16px 0 4px;font-size:15px}
+.progress{height:8px;background:var(--line);border-radius:999px;overflow:hidden;margin:6px 0 4px}
+.progress i{display:block;height:100%;width:0;background:var(--p4);transition:width .2s}
+.small{font-size:13px;color:var(--ink-2)}
+footer{padding:26px 0 60px;color:var(--ink-2);font-size:13.5px}
+footer ul{margin:6px 0 0 18px;padding:0}
+@media print{.nav,.toolbar{display:none} body{background:#fff} details.cat,details.sub{break-inside:avoid} .tl{min-width:0}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <h1>화학(합성) 출신 LCD 재료 엔지니어의 전환 청사진</h1>
+    <p class="lead">LC·셀 공정의 시장은 국내에서 닫혔다. 그러나 그 안에서 20년간 쌓인 고분자·접착·봉지·신뢰성 자산은 지금 가장 뜨거운 곳, 반도체 첨단 패키징 재료에서 그대로 쓰인다. 이 문서는 그 자산을 들고 건너가는 10년의 설계도다. 본선은 첨단 패키징 재료, 보험은 OLED·마이크로디스플레이 재료 평가, 곱셈기는 데이터·AI. 아래 지도로 전체 흐름을 보고, 항목을 눌러 들어간다.</p>
+    <ul class="principles">
+      <li><b>버릴 것과 가져갈 것</b><span>버릴 것: LC 모드·배향·셀 공정 그 자체. 가져갈 것: 에폭시·아크릴 접착 화학, 경화 동역학, 투습·THS 신뢰성, 디스펜싱·UV 공정, DOE·통계, 재료 인증 체계, 재료사 관리. 이력서의 모든 줄을 이 언어로 다시 쓴다.</span></li>
+      <li><b>옮기기 전에 옮길 수 있게</b><span>2027~2028 상반기는 현 직장에서 월급을 받으며 재학습·실적·인맥을 쌓는 기간. 이동 창은 2028 하반기~2030(만 52~54). 그 뒤에는 정규직 이동보다 자문·FAE 계약이 현실적인 형태다.</span></li>
+      <li><b>이름에 붙는 자산, 그리고 몸</b><span>특허·기술사·학회·평판은 회사를 옮겨도 따라온다. 운동은 주 5시간 고정 일정. 정년(2036)과 연금(2041) 사이 5년은 파이프 3~4개로 건넌다.</span></li>
+    </ul>
+    <div class="toolbar">
+      <button class="btn fill" id="openAll" type="button">전체 펼치기</button>
+      <button class="btn" id="closeAll" type="button">전체 접기</button>
+      <button class="btn" id="printBtn" type="button">인쇄 또는 PDF로 저장</button>
+    </div>
+  </div>
+</header>
+
+<div class="spine">
+  <div class="wrap">
+    <div class="spine-bar" aria-hidden="true">
+      <i style="flex:3 0 26px;background:var(--p0)"></i>
+      <i style="flex:18;background:var(--p1)"></i>
+      <i style="flex:30;background:var(--p2)"></i>
+      <i style="flex:48;background:var(--p3)"></i>
+      <i style="flex:24;background:var(--p4)"></i>
+      <i style="flex:60;background:var(--px)"></i>
+    </div>
+    <div class="spine-ticks">
+      <div style="flex:3 0 26px"><b>2026.10</b>만 50</div>
+      <div style="flex:18"><b>2027</b>만 51 · 재학습</div>
+      <div style="flex:30"><b>2028.7</b>만 52 · 이동 창</div>
+      <div style="flex:48"><b>2031</b>만 55 · 안착·전문화</div>
+      <div style="flex:24"><b>2035</b>만 59 · 고문화</div>
+      <div style="flex:60"><b>2036 정년 → 2041 연금</b>만 60~65, 파이프 3~4개</div>
+    </div>
+    <div class="spine-legend">
+      <span><i style="background:var(--p0)"></i>정렬 2026.10~12</span>
+      <span><i style="background:var(--p1)"></i>재학습 2027~2028.6</span>
+      <span><i style="background:var(--p2)"></i>이동 창 2028.7~2030</span>
+      <span><i style="background:var(--p3)"></i>안착·전문화 2031~2034</span>
+      <span><i style="background:var(--p4)"></i>고문화 2035~2036</span>
+      <span><i style="background:var(--px)"></i>60 이후 2037~2041</span>
+    </div>
+  </div>
+</div>
+
+<nav class="nav" aria-label="목차">
+  <div class="wrap">
+    <ul>
+      <li><a href="#map">10년 지도</a></li>
+      <li><a href="#cat1">1 방향</a></li>
+      <li><a href="#cat2">2 전환</a></li>
+      <li><a href="#cat3">3 재학습</a></li>
+      <li><a href="#cat4">4 자격</a></li>
+      <li><a href="#cat5">5 외국어</a></li>
+      <li><a href="#cat6">6 건강</a></li>
+      <li><a href="#cat7">7 네트워크</a></li>
+      <li><a href="#cat8">8 재무</a></li>
+      <li><a href="#year1">1년차 월별</a></li>
+      <li><a href="#roadmap">2028~36</a></li>
+      <li><a href="#week">주간표</a></li>
+      <li><a href="#checklist">체크</a></li>
+      <li><a href="#review">리뷰</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="map">
+  <div class="wrap">
+    <h2 class="sec">한눈에 보는 10년 지도</h2>
+    <p class="sub">가로는 시기, 세로는 삶의 영역. 칸을 누르면 해당 상세 항목이 열린다.</p>
+    <div class="tl-scroll">
+    <div class="tl">
+      <div class="corner"></div>
+      <div class="hd p0"><b>정렬</b><span>2026.10~12 · 만 50</span></div>
+      <div class="hd p1"><b>재학습</b><span>2027~2028.6 · 만 51~52</span></div>
+      <div class="hd p2"><b>이동 창</b><span>2028.7~2030 · 만 52~54</span></div>
+      <div class="hd p3"><b>안착·전문화</b><span>2031~2034 · 만 55~58</span></div>
+      <div class="hd p4"><b>고문화</b><span>2035~2036+ · 만 59~60+</span></div>
+
+      <div class="lane">커리어·전환</div>
+      <button class="cell" type="button" data-target="s1-1"><b>방향 확정</b>본선·보험 결정, 회사 과제를 패키징 언어로 번역 시작</button>
+      <button class="cell" type="button" data-target="s2-1"><b>발판</b>1억 유지, 봉지·접착 신뢰성 과제 owner, 특허·발표 실적</button>
+      <button class="cell" type="button" data-target="s2-2"><b>이동 창</b>중견 소재사·외국계 FAE·OSAT 지원, 2030.6 결정 마감</button>
+      <button class="cell" type="button" data-target="s2-3"><b>안착</b>새 회사(또는 현 회사)에서 재료 인증·신뢰성 리더로 특화</button>
+      <button class="cell" type="button" data-target="s2-4"><b>파이프</b>고문 + 자문 + 강의 + 심사</button>
+
+      <div class="lane">기술 재학습</div>
+      <button class="cell" type="button" data-target="s3-1"><b>지도 작성</b>전이 자산 지도, 학습 자료 확보</button>
+      <button class="cell" type="button" data-target="s3-2"><b>6모듈 12개월</b>개론 → 재료 → 신뢰성 → 열·기계 → 데이터·AI → OLED 보험</button>
+      <button class="cell" type="button" data-target="s3-3"><b>심화</b>하이브리드 본딩, 유리기판, TIM, PID</button>
+      <button class="cell" type="button" data-target="s3-3"><b>교재화</b>패키징 재료 신뢰성 교재, 논문, 후배 양성</button>
+      <button class="cell" type="button" data-target="s3-3"><b>강의·저술</b>커리큘럼 완성</button>
+
+      <div class="lane">학위·자격</div>
+      <button class="cell" type="button" data-target="s4-1"><b>조사</b>단기과정 일정, 기술사 시기 결정</button>
+      <button class="cell" type="button" data-target="s4-1"><b>단기과정</b>패키징 과정 1~2개 이수, 품질경영기사(선택)</button>
+      <button class="cell" type="button" data-target="s4-2"><b>기술사 착수</b>화공기술사 준비(2029 하반기~), 박사 여부 결정</button>
+      <button class="cell" type="button" data-target="s4-4"><b>취득</b>기술사(2031~32), 평가위원·CRE·기술거래사, 박사(선택)</button>
+      <button class="cell" type="button" data-target="s4-3"><b>활용</b>산학교수·강사·감정</button>
+
+      <div class="lane">외국어</div>
+      <button class="cell" type="button" data-target="s5-1"><b>진단</b>영어·일본어 현재 수준</button>
+      <button class="cell" type="button" data-target="s5-2"><b>영어 3시간</b>ECTC·JEDEC 영어, 일본어는 듣기만</button>
+      <button class="cell" type="button" data-target="s5-3"><b>영어 IH, 일본어 본격</b>N4(2029)→N3(2030)</button>
+      <button class="cell" type="button" data-target="s5-4"><b>일본어 N2</b>중국어는 선택</button>
+      <button class="cell" type="button" data-target="s5-5"><b>유지</b>주 3시간</button>
+
+      <div class="lane">건강</div>
+      <button class="cell" type="button" data-target="s6-3"><b>기준선</b>검진, 체력 측정, 헬스 등록</button>
+      <button class="cell" type="button" data-target="s6-2"><b>정착</b>근력 2 + 유산소 2 + 골프</button>
+      <button class="cell" type="button" data-target="s6-2"><b>유지</b>이동기 스트레스 관리, 라운드는 네트워크용</button>
+      <button class="cell" type="button" data-target="s6-3"><b>재설계</b>55세 재검</button>
+      <button class="cell" type="button" data-target="s6-3"><b>목표</b>60세 체력 = 50세 체력</button>
+
+      <div class="lane">네트워크·브랜드</div>
+      <button class="cell" type="button" data-target="s7-1"><b>재작성</b>이력서·LinkedIn을 전이 자산 언어로</button>
+      <button class="cell" type="button" data-target="s7-1"><b>학회</b>KMEPS 가입, 패키징 재료사·OSAT 접점 10명, 이동한 선배</button>
+      <button class="cell" type="button" data-target="s7-1"><b>확장</b>헤드헌터 2명, 정보 인터뷰 5건, KMEPS 발표</button>
+      <button class="cell" type="button" data-target="s7-1"><b>실적</b>ECTC, 학회 위원, 외부 강의</button>
+      <button class="cell" type="button" data-target="s7-2"><b>브랜드</b>'접착·봉지·신뢰성 재료 전문가'로 불린다</button>
+
+      <div class="lane">재무·리스크</div>
+      <button class="cell" type="button" data-target="s8-2"><b>현황</b>연금·고정비, 전환기 완충 계획</button>
+      <button class="cell" type="button" data-target="s8-2"><b>시나리오</b>급여 하락 -10~-20% 계산</button>
+      <button class="cell" type="button" data-target="s8-3"><b>결정 기준</b>오퍼 비교 4가지, 허용 하한</button>
+      <button class="cell" type="button" data-target="s8-3"><b>실험</b>겸업 규정 안에서 자문 1건</button>
+      <button class="cell" type="button" data-target="s8-1"><b>건너기</b>파이프 3~4개로 65세 연금까지</button>
+    </div>
+    </div>
+    <p class="legend-note">나이는 만 나이. 정년 65세 연장은 논의 중이므로 법제화·시행 시기를 확인해 지도의 끝을 옮긴다.</p>
+  </div>
+</section>
+
+<section id="categories">
+  <div class="wrap">
+    <h2 class="sec">여덟 개 영역, 눌러서 들어가기</h2>
+    <p class="sub">각 영역은 세부 항목으로 나뉜다. 항목 번호(예: 2-2)는 리뷰할 때 서로 가리키기 위한 것이다.</p>
+    <div class="cats">
+
+<details class="cat" id="cat1">
+<summary><span class="idx">1</span><span class="ttl"><h3>방향 선택: 어떤 뜨거운 기술로 갈 것인가</h3><p>후보 일곱을 '2026년 열기 × 내 자산과의 거리 × 50대 진입 현실성'으로 비교하고 본선·보험·곱셈기를 정한다</p></span><span class="chev"></span></summary>
+<div class="cat-body">
+
+  <details class="sub" id="s1-1"><summary>1-1 후보 비교와 판정</summary><div class="sub-body">
+    <div class="tbl"><table>
+      <tr><th>후보</th><th>2026년 시장 열기</th><th>내 자산과의 거리</th><th>50대 진입 현실성</th><th>판정</th></tr>
+      <tr><td class="k">반도체 첨단 패키징 재료<br><span class="small">언더필·NCF·EMC·DAF·TIM·PID·임시접합</span></td><td>매우 높음. HBM·AI 칩·칩렛·하이브리드 본딩·유리기판. 국내 소부장 국산화가 진행 중(EMC·언더필 국산화, 소재 스타트업 투자)</td><td>가까움. 에폭시·아크릴 접착 화학, 경화 동역학, 투습·THS 신뢰성, 디스펜싱·UV 공정, 통계가 그대로</td><td>높음. 재료 평가·신뢰성·인증은 경력자 시장. 중견 소재사·외국계 한국지사·스타트업</td><td><span class="tag hot">본선</span></td></tr>
+      <tr><td class="k">OLED·마이크로디스플레이 재료 평가·응용<br><span class="small">발광재료 FAE, TFE 봉지, OLEDoS</span></td><td>높음. IT·차량 OLED, XR</td><td>가까움. 디스플레이 평가·신뢰성·이미지스티킹, 패널사(LGD) 인맥</td><td>중간. 합성 R&amp;D는 젊은 박사 영역, 평가·응용은 경력자 영역</td><td><span class="tag">보험</span></td></tr>
+      <tr><td class="k">AI·데이터 기반 재료 개발</td><td>매우 높음</td><td>중간. 파이썬·통계·DOE 보유</td><td>단독 진입은 낮음, 다른 축에 곱해지면 높음</td><td><span class="tag opt">곱셈기</span></td></tr>
+      <tr><td class="k">배터리 전해액 첨가제·바인더</td><td>중간. 2025~26 수요 둔화, 장기 성장</td><td>중간. 유기합성 배경은 맞지만 전기화학·셀 경험 없음</td><td>낮음~중간. 채용 위축, 젊은 인력 과밀</td><td>보류</td></tr>
+      <tr><td class="k">EUV·반도체 포토레지스트</td><td>높음</td><td>중간. 고분자·코팅은 통하나 리소그래피 공정 지식 필요</td><td>중간. 소수 대형사 집중, 경력 진입 좁음</td><td>조건부(문이 열리면)</td></tr>
+      <tr><td class="k">반도체 전구체(ALD·CVD)</td><td>높음</td><td>멀음. 유기금속 합성·증착 공정</td><td>낮음</td><td>제외</td></tr>
+      <tr><td class="k">LC 광학(AR 렌즈·홀로그래피)</td><td>중간</td><td>매우 가까움</td><td>중간. 시장이 작고 국내 회사가 적음</td><td>현 직장 안에서만 활용</td></tr>
+    </table></div>
+    <p class="note">시간 배분의 원칙: 본선 70%, 보험 20%, 곱셈기 10%. 보류·제외 항목은 2028년 이동 창에서 한 번만 다시 본다.</p>
+  </div></details>
+
+  <details class="sub" id="s1-2"><summary>1-2 왜 첨단 패키징 재료인가</summary><div class="sub-body">
+    <ul>
+      <li><b>수요.</b> AI 가속기와 HBM은 칩을 쌓고 붙이는 기술이고, 그 사이를 채우는 접착·봉지·열계면 재료가 병목이다. 언더필은 일본·독일 회사가 장악하고 있어 국산화 과제와 스타트업이 계속 생기며, EMC는 2025~26년에 DDR5용 국산 양산이 시작됐다. 국산화 과제에는 '재료를 평가하고 인증해 본 경력자'가 필요하다.</li>
+      <li><b>화학.</b> 언더필·NCF·EMC·DAF는 에폭시·아크릴·실리콘 계열이다. 실런트와 같은 반응, 같은 경화, 같은 흡습 문제를 필러·CTE·응력의 언어로 다룰 뿐이다.</li>
+      <li><b>신뢰성.</b> 투습·THS·이온 오염·박리는 패키징에서 MSL·HAST·팝콘 크래킹·계면 박리로 이름만 바뀐다. 20년치 고장 경험이 그대로 자산이다.</li>
+      <li><b>나이.</b> 재료 신뢰성과 인증 체계는 젊은 박사보다 '고장을 많이 본 사람'이 팔리는 영역이다. 60 이후 자문·심사 수요도 이 영역에서 가장 크다.</li>
+    </ul>
+  </div></details>
+
+  <details class="sub" id="s1-3"><summary>1-3 왜 OLED·마이크로디스플레이 평가를 보험으로 두는가</summary><div class="sub-body">
+    <p>LGD 시절 인맥은 지금 대부분 OLED에 있고, 디스플레이 평가·신뢰성·이미지스티킹 지식은 발광재료사의 FAE·응용 자리에 바로 통한다. 국내외 발광재료사(국내 소재사, 미국·일본·독일계 한국지사)는 패널사 출신 평가 전문가를 꾸준히 찾는다. 다만 재료 합성 연구는 젊은 박사의 영역이므로 '합성'이 아니라 '평가·응용·봉지'로 들어간다. 본선이 막히면 이 문으로 간다.</p>
+  </div></details>
+
+  <details class="sub" id="s1-4"><summary>1-4 버릴 것과 가져갈 것</summary><div class="sub-body">
+    <div class="tbl"><table>
+      <tr><th>버릴 것(시장이 닫힘)</th><th>가져갈 것(시장이 열림)</th></tr>
+      <tr><td>LC 모드 설계, VT·프리틸트 최적화, 배향 공정 그 자체, 진공주입·ODF 셀 공정의 세부</td><td>접착·봉지 화학과 경화 동역학, 투습·수분 신뢰성, 디스펜싱·인쇄·UV 공정 감각, 표면처리·계면 화학, DOE·SPC·통계, 재료 인증 체계 설계, 재료사·고객사 협업 경험, 고장 분석 습관</td></tr>
+    </table></div>
+    <p>이력서, LinkedIn, 자기소개의 모든 줄을 오른쪽 열의 언어로 다시 쓴다. 'LC'라는 단어는 경력 연도에만 남긴다.</p>
+  </div></details>
+</div>
+</details>
+
+<details class="cat" id="cat2">
+<summary><span class="idx">2</span><span class="ttl"><h3>전환 전략: 현 직장을 발판으로</h3><p>18개월은 월급을 받으며 준비하고, 2028 하반기~2030에 문을 두드리고, 옮기든 남든 60 이후 모델로 이어 붙인다</p></span><span class="chev"></span></summary>
+<div class="cat-body">
+
+  <details class="sub" id="s2-1"><summary>2-1 현 직장에서의 18개월 (2027~2028.6): 회사 과제를 패키징 언어로 번역한다</summary><div class="sub-body">
+    <p>1억을 유지하면서 공부하는 것이 전환의 첫 조건이다. 회사 과제는 바꾸지 않아도 된다. 같은 일을 패키징의 언어로 정의하고 산출물을 남기면 이력서가 바뀐다.</p>
+    <div class="tbl"><table>
+      <tr><th>회사 과제(지금)</th><th>패키징에서의 이름</th><th>남길 산출물</th></tr>
+      <tr><td class="k">실런트 경화·투습·엔드실</td><td>봉지 신뢰성(encapsulation reliability)</td><td>경화율–투습–신뢰성 상관 보고서, 봉지 재료 인증 절차서</td></tr>
+      <tr><td class="k">ODF 디스펜싱·보이드·합착</td><td>언더필 디스펜싱·모세관 흐름·보이드</td><td>유변학·보이드 DOE 보고서</td></tr>
+      <tr><td class="k">THS·수분 지시제</td><td>MSL·HAST 등가 시험</td><td>JEDEC 대비 시험 매핑 문서</td></tr>
+      <tr><td class="k">배향막 SiOx·OTES 표면처리</td><td>접착 계면 처리(실란 커플링·플라즈마)</td><td>계면 접착력 평가 보고서</td></tr>
+      <tr><td class="k">재료 후보 평가 전반</td><td>재료 인증 체계(Material Qualification)</td><td>MQS 문서 v1</td></tr>
+    </table></div>
+    <ul>
+      <li><b>이름 걸린 과제.</b> 전환에는 '실런트·봉지 신뢰성 체계'가 1순위, ODF 양산 전환이 2순위다. 봉지·접착 쪽이 패키징으로 바로 이어지기 때문이다. <span class="tag hot">봉지·접착 신뢰성 owner</span></li>
+      <li><b>실적.</b> 특허 2건(접착·봉지 관련), 학회 발표 2회(KMEPS 1, IMID 1), 분기 1회 경영진 리뷰로 '1억의 근거'를 숫자로.</li>
+      <li><b>잡무.</b> 거부하지 않고 거래한다. "잡무 비중을 줄이는 대신 이 과제는 내가 책임진다." 대기업 출신의 잡무 거부는 낙인으로 바로 이어진다.</li>
+      <li><b>후배 승계.</b> 2027년부터 1명에게 평가 업무를 넘긴다. 이동 시 인수인계의 근거이자, 강의 경로의 증빙이다.</li>
+    </ul>
+  </div></details>
+
+  <details class="sub" id="s2-2"><summary>2-2 이동 창 (2028.7~2030, 만 52~54): 어디로, 어떤 역할로</summary><div class="sub-body">
+    <div class="tbl"><table>
+      <tr><th>회사군</th><th>예(2028년에 재확인)</th><th>역할</th><th>특징</th></tr>
+      <tr><td class="k">국내 중견 반도체 소재사</td><td>EMC·언더필·DAF·TIM·PID를 개발하는 소재사(예: KCC, 한솔케미칼, 이녹스첨단소재, 덕산, 솔브레인, 동진쎄미켐 등)</td><td>재료 평가·신뢰성·응용기술 리더, 재료 인증 체계 구축</td><td>국산화 과제가 많고 경력자를 선호. 연봉은 8천~1.2억 범위로 추정</td></tr>
+      <tr><td class="k">외국계 패키징 재료사 한국지사</td><td>언더필·NCF·EMC·ABF·TIM 회사(예: Namics, Resonac, Henkel, Ajinomoto Fine-Techno, Sumitomo Bakelite, JSR, DuPont 등)</td><td>FAE·응용기술(삼성·SK·OSAT 대응)</td><td>영어 필수, 일본어 가산. 연봉 상향 가능, 정년 유연</td></tr>
+      <tr><td class="k">패키징 소재 스타트업</td><td>언더필·EMC 원료 국산화 스타트업</td><td>개발 총괄·CTO급</td><td>고위험, 지분·스톡옵션. 2029년 이후 A~B 실적 위에서만</td></tr>
+      <tr><td class="k">OSAT·후공정</td><td>국내 OSAT(예: 하나마이크론, SFA반도체, 네패스, LB세미콘 등)</td><td>재료·신뢰성·고장분석</td><td>현장 부담. 재료 인증 경험을 가장 빨리 쌓을 수 있는 곳</td></tr>
+      <tr><td class="k">(보험) OLED 재료사</td><td>국내외 발광재료·봉지재료사</td><td>재료 평가 FAE</td><td>LGD 인맥이 직접 통하는 곳</td></tr>
+    </table></div>
+    <ul>
+      <li><b>절차.</b> 2028년 3분기부터 정보 인터뷰 5건(각 회사군 1건 이상), 반도체 소재 전문 헤드헌터 2명, 지원은 2028년 4분기부터. 결정 마감은 2030년 6월.</li>
+      <li><b>오퍼 비교 기준 4가지.</b> ① 역할이 재료 평가·신뢰성 리더인가(잡무형 시니어가 아닌가) ② 연봉 — 1억 대비 허용 하한을 미리 정한다 ③ 정년·계약 형태 ④ 자문·강의 병행 허용 여부.</li>
+      <li><b>옮기지 않는 시나리오.</b> 현 회사가 안정적이고 역할이 확장되면 남는다. 그 경우 2031년부터 패키징 재료 자문을 겸업 규정 안에서 병행해 60 이후 파이프를 만든다.</li>
+    </ul>
+  </div></details>
+
+  <details class="sub" id="s2-3"><summary>2-3 안착·전문화 (2031~2034): 어디서든 같은 산출물</summary><div class="sub-body">
+    <ul>
+      <li><b>첫 1년.</b> 재료 인증 체계 + 신뢰성 표준 문서. 디스플레이에서 만들던 것과 같은 형태라 빠르고, 새 조직에서 신뢰를 얻는 가장 짧은 길이다.</li>
+      <li><b>2년차.</b> 특허·학회 발표를 새 회사 이름으로. 후배 1명 양성.</li>
+      <li><b>3~4년차.</b> '패키징 재료 신뢰성 전문가'로 특화. 하이브리드 본딩·유리기판·TIM 중 하나를 깊이 판다. 사내 강의를 교재로 만든다.</li>
+    </ul>
+  </div></details>
+
+  <details class="sub" id="s2-4"><summary>2-4 60 이후 모델 (2035~): 소득 파이프 네 개</summary><div class="sub-body">
+    <div class="grid2">
+      <div class="box"><h4>① 재직·고문</h4><p>60까지 재직 → 60~65 계약 고문(월 정액). 58세부터 협의.</p></div>
+      <div class="box"><h4>② 기술 자문</h4><p>중소 소재사·스타트업·OSAT 대상 재료 인증·신뢰성 자문. 국산화 과제가 많은 영역이라 수요가 있다. 기술사 + 실적 + 개인사업자(2033~34).</p></div>
+      <div class="box"><h4>③ 강의</h4><p>KMEPS·폴리텍 반도체과·기업 교육의 '패키징 재료·접착 신뢰성' 과목. 교재화된 자료와 강의 실적 3회 이상.</p></div>
+      <div class="box"><h4>④ 심사·평가</h4><p>반도체 소부장 국가 R&amp;D 평가위원(산업부·중기부·과기부 풀), 기술사 감정, 기술 평가. 2031년부터 등록.</p></div>
+    </div>
+  </div></details>
+
+  <details class="sub" id="s2-5"><summary>2-5 전환의 리스크와 대응</summary><div class="sub-body">
+    <div class="tbl"><table>
+      <tr><th>리스크</th><th>징후</th><th>대응</th></tr>
+      <tr><td class="k">연봉 하락</td><td>중견 소재사 오퍼가 1억 미만</td><td>허용 하한을 미리 정하고, 외국계 FAE와 병행 지원. 자문 병행 허용을 조건으로 협상</td></tr>
+      <tr><td class="k">나이 필터</td><td>서류 탈락 반복</td><td>공채가 아니라 소개로 간다. 정보 인터뷰·학회·선배 경로에 집중. 55 이후엔 계약·자문 형태로 전환</td></tr>
+      <tr><td class="k">새 분야 신뢰 부족</td><td>면접에서 "패키징 경험이 없다"</td><td>12개월 모듈 산출물(JEDEC 매핑 문서, 언더필 비교 노트, DOE 보고서)을 포트폴리오로 제시. 단기과정 이수증</td></tr>
+      <tr><td class="k">현 회사의 반응</td><td>이동 준비가 알려짐</td><td>회사 안 산출물은 회사 자산으로 남기고, 외부 활동은 학회·기밀 제외 원칙을 지킨다. 승계 준비를 먼저 한다</td></tr>
+      <tr><td class="k">패키징 경기 조정</td><td>2028~29 투자 둔화</td><td>재료 신뢰성·인증은 경기와 무관하게 필요하다. 보험(OLED) 문을 같이 두드린다</td></tr>
+      <tr><td class="k">건강</td><td>수면·체중·통증</td><td>운동 일정은 이동기에도 줄이지 않는다</td></tr>
+    </table></div>
+  </div></details>
+</div>
+</details>
+
+<details class="cat" id="cat3">
+<summary><span class="idx">3</span><span class="ttl"><h3>기술 재학습 커리큘럼</h3><p>가져갈 자산을 패키징 언어로 다시 잇고, 새로 배울 것은 12개월 6모듈로 끝낸다. 산출물이 없는 학습은 끝난 것이 아니다</p></span><span class="chev"></span></summary>
+<div class="cat-body">
+
+  <details class="sub" id="s3-1"><summary>3-1 전이 자산 지도: 지금 아는 것 → 패키징에서의 이름 → 새로 배울 것</summary><div class="sub-body">
+    <div class="tbl"><table>
+      <tr><th>지금 갖춘 것</th><th>패키징에서의 이름</th><th>새로 배울 것</th></tr>
+      <tr><td class="k">에폭시·아크릴 실런트 화학, UV·열 경화</td><td>언더필(CUF·MUF), NCF·NCP, EMC, DAF의 수지 설계</td><td>실리카 필러 충전과 유변학, 저CTE·저응력 설계, 흡습과 이온 불순물(Cl⁻, Na⁺) 관리</td></tr>
+      <tr><td class="k">투습·수분 지시제·THS</td><td>MSL(J-STD-020), HAST, 팝콘 크래킹, 흡습 팽창(CHE)</td><td>JEDEC 시험 체계, 수분 확산 모델, 박리 메커니즘</td></tr>
+      <tr><td class="k">ODF 디스펜싱·인쇄·진공 합착</td><td>언더필 디스펜싱과 모세관 흐름, NCF 열압착(TCB), 보이드</td><td>유변학·젖음·보이드 형성 원리, 열압착 공정 창</td></tr>
+      <tr><td class="k">배향막 SiOx·OTES 표면처리, 접촉각</td><td>접착 계면 처리(실란 커플링·플라즈마), 계면 파괴 분석</td><td>계면 화학, XPS 해석, 접착 시험(다이 전단, DCB)</td></tr>
+      <tr><td class="k">셀갭·프리틸트 통계, DOE</td><td>워피지·본드라인 두께·응력 DOE</td><td>CTE 부정합과 열기계 기초, 워피지 측정</td></tr>
+      <tr><td class="k">LCD 이미지스티킹·신뢰성 분석</td><td>패키지 고장분석(C-SAM, X-ray, 단면, FIB)</td><td>고장 물리, 고장분석 장비 결과 해석</td></tr>
+    </table></div>
+  </div></details>
+
+  <details class="sub" id="s3-2"><summary>3-2 12개월 6모듈 (2026.11 ~ 2027.09)</summary><div class="sub-body">
+    <div class="tbl"><table>
+      <tr><th>모듈</th><th>내용</th><th>핵심 자료</th><th>산출물</th><th>기간</th></tr>
+      <tr><td class="k">M1 첨단 패키징 개론</td><td>범핑·플립칩, WLP·FOWLP, 2.5D 인터포저, HBM TSV 적층, 하이브리드 본딩, 칩렛, 유리기판·PLP</td><td>Tummala 『Fundamentals of Microsystems Packaging』, Lau 『Semiconductor Advanced Packaging』(2021), Lau 『Chiplet Design and Heterogeneous Integration Packaging』(2023), KPCA '첨단 반도체 패키징 기술의 이해' 1일 강좌</td><td>용어집 200개, 공정 흐름도 5장</td><td>2026.11~12 (8주)</td></tr>
+      <tr><td class="k">M2 패키징 재료</td><td>언더필(CUF·MUF·NCF·NCP), EMC, DAF, TIM1·TIM2, PID·PSPI(RDL 유전체), 임시접합·디본딩, 솔더·플럭스, 기판 ABF·유리코어</td><td>Lu &amp; Wong(편) 『Materials for Advanced Packaging』, Petrie 『Handbook of Adhesives and Sealants』, 재료사 기술자료</td><td>재료별 요구물성표, '실런트 vs 언더필' 비교 노트</td><td>2027.1~3 (12주)</td></tr>
+      <tr><td class="k">M3 신뢰성·고장분석</td><td>JEDEC JESD22(TC·HAST·bHAST·전기이동), J-STD-020 MSL, 팝콘·CHE·박리, C-SAM·X-ray·단면·FIB·SEM/EDS, 고장 물리</td><td>JEDEC 표준 원문, O'Connor 『Practical Reliability Engineering』, ECTC 프로시딩(IEEE Xplore)</td><td>회사 THS를 JEDEC 언어로 재정리한 보고서, MSL 시험 절차서 초안</td><td>2027.3~5 (10주)</td></tr>
+      <tr><td class="k">M4 열·기계</td><td>CTE 부정합·워피지·본드라인·응력, 열저항과 TIM 열전도, FEM 결과 읽기</td><td>Tummala 해당 장, ECTC 논문, 열해석 입문서</td><td>회사 과제에 워피지·보이드 관점 DOE 1건</td><td>2027.5~6 (6주)</td></tr>
+      <tr><td class="k">M5 데이터·AI 재료 개발</td><td>베이지안 최적화 DOE, 재료 정보학 기초, 파이썬 자동화</td><td>scikit-learn·scikit-optimize, 재료정보학 입문 온라인 강의</td><td>회사 과제에 BO-DOE 1건 적용, 스크립트 공개(사내)</td><td>2027.7 (4주)</td></tr>
+      <tr><td class="k">M6 OLED·마이크로디스플레이 보험</td><td>소자 기초·수명·효율, TFE 박막봉지, OLED 이미지스티킹, OLEDoS</td><td>Tsujimura 『OLED Display Fundamentals and Applications』, KIDS·IMID 튜토리얼</td><td>'LCD IS vs OLED IS' 비교 노트, TFE 봉지 요구물성표</td><td>2027.8~9 (8주)</td></tr>
+    </table></div>
+    <p class="note">모듈마다 산출물이 곧 포트폴리오다. 2028년 면접에서 "패키징 경험이 없다"는 말에 대한 답은 이 문서들이다.</p>
+  </div></details>
+
+  <details class="sub" id="s3-3"><summary>3-3 2028년 이후 심화와 교재화</summary><div class="sub-body">
+    <div class="tbl"><table>
+      <tr><th>시기</th><th>주제</th><th>산출물</th></tr>
+      <tr><td class="k">2028</td><td>하이브리드 본딩 재료(유전체·CMP·표면 활성), 유리코어 기판 재료, AI 가속기용 TIM, PID 포토 리소 기초. SEMI 패키징 기술 교육(6월경) 이수</td><td>심화 노트 4편, KMEPS 발표 1회</td></tr>
+      <tr><td class="k">2029</td><td>ECTC 참석, 새 회사(또는 현 회사) 과제 중심 심화</td><td>논문 1편 착수, 특허</td></tr>
+      <tr><td class="k">2030~2031</td><td>재료 인증 체계·신뢰성 표준을 새 조직에 이식</td><td>MQS v2, 신뢰성 표준, 논문 1편</td></tr>
+      <tr><td class="k">2032~2034</td><td>정리·교재화. 세 권: 접착·봉지 재료 화학 / 패키징 재료 신뢰성 / 디스플레이에서 패키징으로(전이 사례집)</td><td>교재 3권, 외부 강의 커리큘럼, 논문 2편째</td></tr>
+      <tr><td class="k">2035~</td><td>강의·저술</td><td>기술 노트 시리즈</td></tr>
+    </table></div>
+  </div></details>
+
+  <details class="sub" id="s3-4"><summary>3-4 주간 학습 방식: 주 7시간</summary><div class="sub-body">
+    <ul>
+      <li>평일 아침 40분 × 5 + 토요일 2시간 + 일요일 1.5시간 = 약 7시간. 전환기라 1차 청사진(5시간)보다 2시간 늘리고, 그만큼 외국어를 줄인다.</li>
+      <li>주 1편 ECTC 또는 KMEPS 논문 → 5문장 영어 요약 → 노트에 축적. 월 1회 사내 공유.</li>
+      <li>6개월마다 '패키징 재료 면접 30문'을 스스로 답한다. 답하지 못하는 문항이 다음 학습 목록이다.</li>
+      <li>AI 도구는 논문 요약·표준 원문 해설·스크립트 작성에 업무 표준으로 쓴다.</li>
+    </ul>
+  </div></details>
+</div>
+</details>
+
+<details class="cat" id="cat4">
+<summary><span class="idx">4</span><span class="ttl"><h3>학위·자격·단기과정</h3><p>2027년은 단기과정으로 이력서에 줄을 만들고, 기술사는 전환 학습 뒤(2029 하반기)로, 박사는 조건부로 미룬다</p></span><span class="chev"></span></summary>
+<div class="cat-body">
+
+  <details class="sub" id="s4-1"><summary>4-1 단기과정: 2027년에 가장 먼저 쓰이는 줄</summary><div class="sub-body">
+    <div class="tbl"><table>
+      <tr><th>과정(2026년 운영 기준, 매년 일정 재확인)</th><th>형태</th><th>쓸모</th><th>시기</th></tr>
+      <tr><td class="k">KPCA '첨단 반도체 패키징 기술의 이해', '반도체 제조공정 기초(CMOS부터 패키징까지)'</td><td>1일 강좌, 인천 송도</td><td>M1과 병행, 용어·흐름의 뼈대</td><td>2026.12~2027.3</td></tr>
+      <tr><td class="k">나노종합기술원 첨단패키징 재직자 교육</td><td>재직자 과정, 대전</td><td>8·12인치 패키징 장비·분석 실습</td><td>2027 상반기(공지 확인)</td></tr>
+      <tr><td class="k">SEMI Korea 반도체 패키징 기술 교육</td><td>연 1회(2026년은 6월), 경력 엔지니어 대상</td><td>HBM·WLP 공정별 심화, 소재사·장비사 인맥</td><td>2027.6 또는 2028.6</td></tr>
+      <tr><td class="k">한국나노기술원(수원) 반도체 패키지 기술 교육, 한국반도체아카데미 과정</td><td>재직자 단기</td><td>장비·검사 실습</td><td>2027 하반기</td></tr>
+    </table></div>
+    <p>이수증은 이력서 한 줄이고, 강사와 수강생은 첫 패키징 인맥이다. 2027년 안에 1~2개를 마친다.</p>
+  </div></details>
+
+  <details class="sub" id="s4-2"><summary>4-2 기술사: 화공기술사 1순위, 시기는 2029 하반기~2031</summary><div class="sub-body">
+    <p>패키징 재료도 화공기술사의 범위(고분자·접착·공정·안전)에 든다. 1차 청사진의 2028 응시를 전환 학습 뒤로 옮긴다. 준비는 2029년 하반기 시작, 2030 1·2차 응시, 2031 합격 목표, 2032 등록. 품질관리기술사는 2순위로 남긴다. 응시 자격·시행 횟수는 Q-Net 공고로 확인한다.</p>
+    <p class="note">서브노트의 절반을 패키징 재료(접착·봉지·신뢰성)로 채운다. 시험 준비가 곧 새 분야 정리가 되게 한다.</p>
+  </div></details>
+
+  <details class="sub" id="s4-3"><summary>4-3 박사: 조건부, 2029년에 결정</summary><div class="sub-body">
+    <div class="grid2">
+      <div class="box"><h4>박사가 없다면</h4><p>2029년에 결정. 패키징 재료(NCF·언더필·접착 계면) 또는 고분자 랩의 산업체 박사, 2030 입학 → 2034~35 학위(만 58~59). 늦은 편이므로 강의·정출연 경로가 확실할 때만 간다. 아니면 기술사 + 학회 활동으로 대체한다.</p></div>
+      <div class="box"><h4>이미 박사라면</h4><p>학위 대신 KMEPS 위원 활동, 논문 2편, 기술사에 집중. 2031년부터 산학협력중점교수·정출연 위촉 요건을 확인한다.</p></div>
+    </div>
+  </div></details>
+
+  <details class="sub" id="s4-4"><summary>4-4 보조 자격과 등록</summary><div class="sub-body">
+    <div class="tbl"><table>
+      <tr><th>자격·등록</th><th>시기</th><th>왜</th></tr>
+      <tr><td class="k">품질경영기사 <span class="tag opt">선택</span></td><td>2028</td><td>기술사 전 워밍업, 품질 시스템 기본</td></tr>
+      <tr><td class="k">6시그마 BB</td><td>2030</td><td>DOE·통계의 공식화</td></tr>
+      <tr><td class="k">ASQ CRE</td><td>2031</td><td>국제 신뢰성 자격, 영어 시험. 외국계 재료사 가산</td></tr>
+      <tr><td class="k">국가 R&amp;D 평가위원 등록</td><td>2031~</td><td>반도체 소부장 과제 풀이 크다. 심사 파이프의 시작</td></tr>
+      <tr><td class="k">기술거래사</td><td>2033</td><td>자문·기술평가의 자격</td></tr>
+    </table></div>
+  </div></details>
+</div>
+</details>
+
+<details class="cat" id="cat5">
+<summary><span class="idx">5</span><span class="ttl"><h3>외국어</h3><p>영어를 먼저, 일본어는 2028년부터 본격. 패키징 재료사도 일본계 비중이 커서 우선순위는 1차 청사진과 같다</p></span><span class="chev"></span></summary>
+<div class="cat-body">
+
+  <details class="sub" id="s5-1"><summary>5-1 우선순위와 이유</summary><div class="sub-body">
+    <div class="tbl"><table>
+      <tr><th>언어</th><th>왜</th><th>목표</th></tr>
+      <tr><td class="k">영어 <span class="tag hot">필수</span></td><td>ECTC·JEDEC·재료사 본사 소통, 외국계 FAE, CRE 시험</td><td>2028 OPIc IH → 2030 학회 발표 2회</td></tr>
+      <tr><td class="k">일본어 <span class="tag">2순위</span></td><td>언더필·NCF·EMC·ABF·TIM의 주요 재료사가 일본계. 일본 특허·기술자료 원문. 한자 지식과 일본 음악·애니 취미가 몰입 자원</td><td>2029 N4 → 2030 N3 → 2032 N2</td></tr>
+      <tr><td class="k">중국어 <span class="tag opt">선택</span></td><td>중국 OSAT·소재 고객이 생길 때</td><td>2033 이후 HSK 3급</td></tr>
+    </table></div>
+  </div></details>
+
+  <details class="sub" id="s5-2"><summary>5-2 2027: 영어 3시간, 일본어는 듣기 1시간</summary><div class="sub-body">
+    <ul>
+      <li>영어: 온라인 1:1 화상 튜터 주 2회 25분(소재: 재료사 미팅, 고장 협의, 면접 질문), 출퇴근 쉐도잉, 주 1편 ECTC 논문 5문장 요약. JEDEC 표준을 영어 원문으로 읽는 것이 곧 영어 공부다.</li>
+      <li>일본어: 문자만 익히고 출퇴근 듣기(음악·애니)로 귀를 열어 둔다. 문법은 2028년부터.</li>
+      <li>2027.02 OPIc 1차, 2028.02 IH 목표.</li>
+    </ul>
+  </div></details>
+
+  <details class="sub" id="s5-3"><summary>5-3 2028~2030: 영어 IH 유지, 일본어 본격</summary><div class="sub-body">
+    <ul>
+      <li>일본어 문법 교재 1권(2028) → N4(2029.12) → N3(2030.12). 2029년부터 재료사 일본어 기술자료·특허 읽기, 'PKG 재료 일본어 용어집'.</li>
+      <li>영어는 면접·정보 인터뷰 실전이 곧 훈련이다. 2028 KMEPS 영어 초록, 2030 국제 학회 발표.</li>
+    </ul>
+  </div></details>
+
+  <details class="sub" id="s5-4"><summary>5-4 2031~2034: 일본어 N2, 중국어 선택</summary><div class="sub-body">
+    <p>2032 N2 목표. 일본계 재료사 담당자와 기술 미팅 부분 참여. 중국어는 중국 고객·협력사를 담당하게 될 때 HSK 3급 1년 계획으로 시작한다.</p>
+  </div></details>
+
+  <details class="sub" id="s5-5"><summary>5-5 시기별 시간 배분</summary><div class="sub-body">
+    <div class="tbl"><table>
+      <tr><th>시기</th><th>영어</th><th>일본어</th><th>중국어</th><th>합계(주)</th></tr>
+      <tr><td class="k">2026 Q4~2027 (재학습)</td><td>3시간</td><td>1시간(듣기)</td><td>—</td><td>4시간</td></tr>
+      <tr><td class="k">2028~2029 (이동 창)</td><td>2.5시간</td><td>2시간</td><td>—</td><td>4.5시간</td></tr>
+      <tr><td class="k">2030~2031 (기술사 집중)</td><td>2시간</td><td>2시간</td><td>—</td><td>4시간</td></tr>
+      <tr><td class="k">2032~2033</td><td>1.5시간</td><td>2시간</td><td>3시간(선택)</td><td>3.5~6.5시간</td></tr>
+      <tr><td class="k">2034~</td><td>1시간</td><td>1시간</td><td>1시간</td><td>3시간</td></tr>
+    </table></div>
+  </div></details>
+</div>
+</details>
+
+<details class="cat" id="cat6">
+<summary><span class="idx">6</span><span class="ttl"><h3>건강·운동</h3><p>근력 2회 + 유산소 2회 + 골프(네트워크). 전환기에 가장 먼저 밀리는 것이 운동이므로 캘린더에 먼저 넣는다</p></span><span class="chev"></span></summary>
+<div class="cat-body">
+
+  <details class="sub" id="s6-1"><summary>6-1 종목 비교</summary><div class="sub-body">
+    <div class="tbl"><table>
+      <tr><th>종목</th><th>주된 효과</th><th>시간·비용</th><th>네트워크 가치</th><th>주의</th></tr>
+      <tr><td class="k">헬스(근력) <span class="tag hot">필수</span></td><td>근육량·골밀도·대사, 허리·자세. 50대 1순위</td><td>주 2회 50분, 저비용</td><td>낮음</td><td>초기 4주 코칭으로 자세를 잡는다</td></tr>
+      <tr><td class="k">수영 <span class="tag">유산소 1순위</span></td><td>관절 부담 없는 유산소, 어깨·허리</td><td>주 2회 45분, 중간</td><td>낮음</td><td>어깨 과사용 주의</td></tr>
+      <tr><td class="k">스피닝 <span class="tag">유산소 대안</span></td><td>고강도, 무릎 부담 적음, 시간 효율</td><td>주 1~2회 45분, 중간</td><td>낮음</td><td>심혈관 소견이 있으면 강도를 의사와 정한다</td></tr>
+      <tr><td class="k">골프 <span class="tag">네트워크</span></td><td>운동 효과는 보통. 재료사·고객사·선배 네트워크의 핵심 도구</td><td>연습장 주 1회 + 라운드 월 1~2회, 고비용</td><td>매우 높음</td><td>허리 회전 부담, 근력 운동 병행이 전제</td></tr>
+      <tr><td class="k">걷기</td><td>기본 활동량, 회복</td><td>하루 7~8천 보</td><td>중간</td><td>—</td></tr>
+    </table></div>
+  </div></details>
+
+  <details class="sub" id="s6-2"><summary>6-2 추천 조합</summary><div class="sub-body">
+    <ul>
+      <li>헬스 2회(월·목): 스쿼트·힙힌지·로우·프레스, 12주 단위 점진.</li>
+      <li>수영 또는 스피닝 2회(화·금): 관절 상태와 접근성으로 선택, 수영 우선.</li>
+      <li>골프: 토요일 연습장 60분, 라운드 월 1~2회는 패키징 재료사·OSAT·선배와의 네트워크 라운드로.</li>
+      <li>걷기: 출퇴근·점심에 하루 7~8천 보. 합계 주 5~6시간.</li>
+    </ul>
+    <p class="note warn">검진에서 이상 소견이 있거나 관절·심혈관 이력이 있으면, 종목과 강도를 시작 전에 의사와 정한다.</p>
+  </div></details>
+
+  <details class="sub" id="s6-3"><summary>6-3 검진과 연도별</summary><div class="sub-body">
+    <ul>
+      <li>국가건강검진(위내시경 2년, 대장 검사), 심혈관 지표 연 1회, 근골격은 통증 시 즉시, 치과 연 2회, 안과 연 1회, 수면 7시간. 회식·음주는 "주 1회 이하, 면접·시험 전날 금주" 규칙.</li>
+      <li>2026 Q4 검진·기준선(인바디·악력·추정 1RM·수영 200m) → 2027 12주 프로그램 3사이클 → 2028~30 이동기에도 유지 → 2031 만 55세 재검 → 2034~ 관절 보호형 전환.</li>
+    </ul>
+  </div></details>
+</div>
+</details>
+
+<details class="cat" id="cat7">
+<summary><span class="idx">7</span><span class="ttl"><h3>네트워크·브랜드·선배들의 경로</h3><p>50대 전환은 공채가 아니라 소개로 일어난다. 접점의 수, 그리고 '이미 건너간 사람'의 경로를 따른다</p></span><span class="chev"></span></summary>
+<div class="cat-body">
+
+  <details class="sub" id="s7-1"><summary>7-1 접점 만들기</summary><div class="sub-body">
+    <div class="tbl"><table>
+      <tr><th>항목</th><th>무엇을</th><th>언제</th><th>목표</th></tr>
+      <tr><td class="k">이력·프로필</td><td>국문·영문 이력서와 LinkedIn을 전이 자산 언어(접착·봉지·신뢰성·재료 인증·DOE)로 재작성. LC는 경력 연도에만</td><td>2026.10~12</td><td>완료, 2027.7 v1, 2028.6 v2</td></tr>
+      <tr><td class="k">학회·협회</td><td>KMEPS(한국마이크로전자및패키징학회) 회원·학술대회, SEMI·KPCA 행사, IMID는 보험용으로 유지</td><td>2026.10~</td><td>KMEPS 발표 2회(2029까지), ECTC 참석 2029</td></tr>
+      <tr><td class="k">패키징 재료사·OSAT 담당자</td><td>언더필·EMC·DAF·TIM 재료사와 OSAT 신뢰성 담당자 목록, 분기 1회 연락(기술 질문·정보 교환)</td><td>2027~</td><td>10명(2027), 20명(2029)</td></tr>
+      <tr><td class="k">이미 건너간 선배</td><td>LGD·디스플레이 출신으로 반도체 소재사·OSAT·OLED 재료사로 옮긴 선배</td><td>2027 상반기</td><td>5명과 정보 인터뷰</td></tr>
+      <tr><td class="k">헤드헌터</td><td>반도체 소재 전문 서치펌</td><td>2028~</td><td>2명, 연 2회 시장 정보</td></tr>
+      <tr><td class="k">단기과정 인맥</td><td>강사·수강생(소재사·장비사 재직자)</td><td>2027</td><td>5명</td></tr>
+      <tr><td class="k">기술 노트</td><td>'디스플레이에서 패키징으로' 시리즈. 회사 기밀 제외, 일반 원리 중심</td><td>분기 1편</td><td>2036까지 30편</td></tr>
+      <tr><td class="k">멘토링</td><td>사내 후배 1~2명</td><td>2027~</td><td>강의 실적의 증빙</td></tr>
+    </table></div>
+  </div></details>
+
+  <details class="sub" id="s7-2"><summary>7-2 브랜드 문장과 하지 말 것</summary><div class="sub-body">
+    <p class="note">브랜드 문장: <b>"디스플레이 20년의 접착·봉지·신뢰성 경험을 반도체 패키징 재료의 인증 체계로 옮겨 심는 사람."</b> 발표, 노트, 이력서, 정보 인터뷰의 첫 문장이 이것이다.</p>
+    <p class="note warn">하지 말 것: 회사 기밀·고객 정보 노출, 온라인 회사·상사 험담, 단기 고액을 내세우는 해외 제안에의 성급한 응답(기술유출·영업비밀 리스크, 2~3년 계약 뒤 종료가 대부분), "LCD가 사양이라서 나온다"는 식의 자기소개(도망이 아니라 '옮겨 심는' 이야기여야 한다).</p>
+  </div></details>
+
+  <details class="sub" id="s7-3"><summary>7-3 이미 건너간 사람들의 유형</summary><div class="sub-body">
+    <p>특정 개인이 아니라, 디스플레이 출신 50대 엔지니어에게 반복해서 관찰되는 경로다.</p>
+    <div class="grid2">
+      <div class="box"><h4>A 디스플레이 공정·재료 → 반도체 소재사 평가·FAE</h4><p>가장 흔한 경로. 패널사에서 재료를 평가·인증하던 사람이 소재사에서 고객(삼성·SK·OSAT) 대응과 신뢰성을 맡는다. 조건: 52~54세 이동, 1년 선행 학습, 첫 회사에서 '인증 체계' 같은 표준 산출물로 빠르게 신뢰 획득.</p></div>
+      <div class="box"><h4>B 디스플레이 재료 → OLED 재료사 FAE</h4><p>LGD 인맥이 직접 통하는 경로. 평가·수명·이미지스티킹 지식이 자산. 합성이 아니라 평가·응용으로 들어간다.</p></div>
+      <div class="box"><h4>C 디스플레이 신뢰성 → OSAT·패키징 신뢰성</h4><p>고장분석·통계·표준 경험으로 후공정 신뢰성 조직에 들어간다. 재료 인증 경험을 가장 빨리 쌓지만 현장 부담이 있다.</p></div>
+      <div class="box"><h4>D 잔류 + 자문 병행</h4><p>현 회사에서 기술 책임을 유지하며 겸업 규정 안에서 패키징 재료 자문을 시작해 60 이후 파이프를 만든다.</p></div>
+    </div>
+    <p><b>실패 패턴.</b> 공부 없이 인맥만으로 옮겨 1~2년 내 이탈. 연봉을 고집하다 이동 창(52~54)을 놓침. 55 이후에 시작. 옮긴 뒤 옛 분야 언어로 말해 '디스플레이 사람'으로 남음.</p>
+  </div></details>
+</div>
+</details>
+
+<details class="cat" id="cat8">
+<summary><span class="idx">8</span><span class="ttl"><h3>재무·리스크</h3><p>전환기의 급여 변동과 60~65 공백을 설계한다. 여기의 내용은 확인 목록이지 재무 조언이 아니다</p></span><span class="chev"></span></summary>
+<div class="cat-body">
+
+  <details class="sub" id="s8-1"><summary>8-1 연표: 정년과 연금 사이</summary><div class="sub-body">
+    <div class="tbl"><table>
+      <tr><th>연도</th><th>나이(만)</th><th>사건</th><th>의미</th></tr>
+      <tr><td class="k">2028~2030</td><td>52~54</td><td>이동 창</td><td>급여가 일시 변동할 수 있는 구간</td></tr>
+      <tr><td class="k">2036</td><td>60</td><td>법정 정년</td><td>65세 연장 논의 진행 중, 확정 시 반영</td></tr>
+      <tr><td class="k">2036~2041</td><td>60~65</td><td>소득 공백 구간</td><td>고문 + 자문 + 강의 + 심사로 건넌다</td></tr>
+      <tr><td class="k">2041</td><td>65</td><td>국민연금 개시(1969년생 이후 65세)</td><td>연금 + 파이프 1~2개</td></tr>
+    </table></div>
+  </div></details>
+
+  <details class="sub" id="s8-2"><summary>8-2 2026년 4분기 확인 목록과 전환기 시나리오</summary><div class="sub-body">
+    <ul>
+      <li>퇴직연금 유형(DB·DC)과 적립 현황, IRP·연금저축, 국민연금 예상 수령액과 가입 기간.</li>
+      <li>가계 고정비, 자녀 교육비 시기, 보험 정리.</li>
+      <li>이동 시 급여 -10%·-20% 시나리오로 가계를 어림한다. 퇴직금·퇴직연금 이전(IRP) 절차를 미리 확인한다.</li>
+      <li>숫자의 판단은 재무 전문가와 한다.</li>
+    </ul>
+  </div></details>
+
+  <details class="sub" id="s8-3"><summary>8-3 결정 기준, 겸업, 개인사업자</summary><div class="sub-body">
+    <ul>
+      <li>오퍼 비교 기준 4가지(2-2)와 연봉 허용 하한을 2028년 6월 전에 글로 적어 둔다. 창이 열린 뒤에 정하면 흔들린다.</li>
+      <li>2027: 현 회사 취업규칙의 겸업·자문·영업비밀·경업금지 조항 확인. 2029~: 허용 범위 안에서 자문 1건. 2033~34: 개인사업자 또는 법인, 고문 계약 형태.</li>
+      <li>주말 반나절은 가족 고정, 연 1회 장기 휴가. 운동·언어·공부는 아침과 출퇴근에 배치해 저녁을 지킨다.</li>
+    </ul>
+  </div></details>
+</div>
+</details>
+
+    </div>
+  </div>
+</section>
+
+<section id="year1">
+  <div class="wrap">
+    <h2 class="sec">1년차 월별 실행표 (2026.10 ~ 2027.09)</h2>
+    <p class="sub">6모듈의 진도와 회사 안 산출물이 같은 달에 맞물리도록 짰다. 한 달에 네 줄 이상 넣지 않는다.</p>
+    <div class="tbl"><table>
+      <tr><th>월</th><th>업무(회사 안)</th><th>재학습·자격</th><th>외국어</th><th>건강·네트워크·재무</th></tr>
+      <tr><td class="k">2026.10</td><td>방향 확정(본선·보험). 경영진과 역할 면담, '봉지·접착 신뢰성 체계' owner 합의, 잡무 비중 측정</td><td>전이 자산 지도 작성, 학습 자료 확보(Tummala·Lau·JEDEC), 단기과정 일정 조사</td><td>OPIc 모의, 일본어 진단</td><td>건강검진 예약, 헬스 등록, 체력 기준선, 연금·고정비 확인, KMEPS 가입</td></tr>
+      <tr><td class="k">2026.11</td><td>과제 마스터플랜과 분기 KPI, 실런트 경화율–투습 상관 데이터 정리 시작</td><td>M1 패키징 개론 시작, KPCA 1일 강좌 신청</td><td>영어 튜터 주 2회 시작, 일본어 문자</td><td>근력 2·유산소 2 습관화, 이력서 v0(전이 자산 언어)</td></tr>
+      <tr><td class="k">2026.12</td><td>연말 성과 보고, 2027 특허 아이디어(접착·봉지) 2건</td><td>M1 마무리: 용어집 200개·흐름도 5장, 나노종합기술원·SEMI 과정 일정 확인</td><td>영어 논문 요약 4편</td><td>검진 결과 반영, 12주 프로그램 1회차, LinkedIn 재작성</td></tr>
+      <tr><td class="k">2027.01</td><td>과제 실행, 첫 특허 출원 준비</td><td>M2 패키징 재료 시작(언더필·NCF)</td><td>일본어 듣기 루틴(출퇴근)</td><td>골프 연습장 정례화, 이미 건너간 선배 목록 5명</td></tr>
+      <tr><td class="k">2027.02</td><td>특허 1건 출원(회사 절차)</td><td>M2 계속(EMC·DAF·TIM), 겸업 규정 확인</td><td>OPIc 1차 응시</td><td>패키징 재료사·OSAT 담당자 목록 10명</td></tr>
+      <tr><td class="k">2027.03</td><td>THS 데이터를 JEDEC 언어로 재정리한 보고서 1편</td><td>M2 마무리(요구물성표·비교 노트), M3 신뢰성 시작</td><td>영어 면접 질문 30문 초안</td><td>12주 프로그램 2회차, 선배 정보 인터뷰 2건</td></tr>
+      <tr><td class="k">2027.04</td><td>재료 인증 체계(MQS) v1 초안</td><td>M3 계속(고장분석), 단기과정 1개 수강</td><td>KMEPS 초록(가능하면 영어)</td><td>KMEPS 춘계 학술대회 참가, 접점 5명</td></tr>
+      <tr><td class="k">2027.05</td><td>상반기 경영진 리뷰</td><td>M3 마무리(MSL 절차서 초안), M4 열·기계 시작</td><td>영어 발표 스크립트</td><td>네트워크 라운드 1회</td></tr>
+      <tr><td class="k">2027.06</td><td>MQS v1 배포, 워피지·보이드 관점 DOE 1건 착수</td><td>M4 마무리, SEMI 패키징 교육(가능하면)</td><td>영어 튜터와 발표 연습</td><td>반기 체력 측정, 12주 3회차</td></tr>
+      <tr><td class="k">2027.07</td><td>하반기 과제, 후배 1명 승계 시작</td><td>M5 데이터·AI: BO-DOE 1건 적용</td><td>일본어 N5 자가 점검</td><td>이력서 v1(패키징 언어), 선배 인터뷰 3건째</td></tr>
+      <tr><td class="k">2027.08</td><td>IMID 발표(보험용, 봉지·접착 주제)</td><td>M6 OLED 보험 시작</td><td>영어 발표 실전</td><td>학회 접점 10명</td></tr>
+      <tr><td class="k">2027.09</td><td>1년 리뷰: 잡무 비중, 과제 성과, '1억의 근거' 문서</td><td>M6 마무리, 6모듈 산출물 포트폴리오 정리(문서 6건·특허 1~2건·발표 1회)</td><td>2년차 계획(영어 IH, 일본어 문법)</td><td>1년 체력 비교, 타깃 회사 12곳 목록, 2028 이동 창 준비 착수</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="wrap">
+    <h2 class="sec">2028 ~ 2036 로드맵</h2>
+    <p class="sub">2028~2029는 분기 단위, 2030년부터는 연 단위. 시험·교육 일정은 매년 기관 공지로 다시 맞춘다.</p>
+    <div class="tbl"><table>
+      <tr><th>시기</th><th>커리어·전환</th><th>재학습·자격·학위</th><th>외국어</th><th>건강·네트워크·재무</th></tr>
+      <tr><td class="k">2028 Q1</td><td>봉지·접착 과제 2년차, MQS v2</td><td>심화: 하이브리드 본딩·유리기판 노트</td><td>OPIc IH, 일본어 문법 시작</td><td>연봉 허용 하한과 오퍼 기준 4가지를 글로</td></tr>
+      <tr><td class="k">2028 Q2</td><td>특허 2건째, KMEPS 발표 1회</td><td>SEMI 패키징 기술 교육(6월), 품질경영기사(선택)</td><td>KMEPS 영어 초록</td><td>정보 인터뷰 5건 시작</td></tr>
+      <tr><td class="k">2028 Q3</td><td>이동 창 개방: 헤드헌터 2명, 회사군별 지원 준비</td><td>TIM·PID 심화 노트</td><td>영어 면접 실전 연습</td><td>이력서 v2, 라운드는 재료사·OSAT 인맥과</td></tr>
+      <tr><td class="k">2028 Q4</td><td>지원 시작(외국계 FAE·중견 소재사·OSAT 병행)</td><td>연말 포트폴리오 정리</td><td>일본어 N5</td><td>급여 시나리오 재계산</td></tr>
+      <tr><td class="k">2029 Q1~Q2</td><td>면접·오퍼 비교. 잔류 시 자문 병행 설계</td><td>박사 여부 결정, ECTC 참석(5~6월)</td><td>영어 유지</td><td>선배 경로 재확인</td></tr>
+      <tr><td class="k">2029 Q3~Q4</td><td>이동 또는 잔류. 새 조직에서 인증 체계·신뢰성 표준 착수</td><td>화공기술사 준비 시작(하반기), 논문 1편 착수</td><td>JLPT N4</td><td>자문 실험 1건(잔류 시), 인맥 20명</td></tr>
+      <tr><td class="k">2030</td><td>결정 마감(6월). 새 회사 1년차 산출물 또는 현 회사 고문화 협의</td><td>기술사 1·2차 응시, 6시그마 BB</td><td>JLPT N3, 국제 학회 발표</td><td>재료사·OSAT 라운드 정례화</td></tr>
+      <tr><td class="k">2031</td><td>재료 인증·신뢰성 리더로 안착, 후배 양성</td><td>기술사 합격 목표, CRE, 평가위원 등록, 논문 1편 게재</td><td>영어 유지</td><td>만 55세 재검, 외부 강의 1회</td></tr>
+      <tr><td class="k">2032</td><td>특화 주제 선택(하이브리드 본딩·유리기판·TIM 중 하나)</td><td>기술사 등록, 박사 입학(선택), 교재 1권</td><td>JLPT N2</td><td>외부 강의 2회, 학회 위원</td></tr>
+      <tr><td class="k">2033</td><td>자문 병행 구조 확정</td><td>기술거래사, 교재 2권, 논문 2편째</td><td>중국어 시작(선택)</td><td>개인사업자 준비</td></tr>
+      <tr><td class="k">2034</td><td>후배 승계 완료, 자문 1건 가동</td><td>교재 3권, 강의 커리큘럼 완성, 박사 학위(해당 시 2034~35)</td><td>유지</td><td>관절 보호형 운동 전환</td></tr>
+      <tr><td class="k">2035</td><td>60 이후 계약(고문·자문) 협의</td><td>강의 정례화</td><td>유지</td><td>파이프 3개 가동 확인</td></tr>
+      <tr><td class="k">2036</td><td>정년. 고문 + 자문 + 강의 + 심사</td><td>기술 노트 시리즈 지속</td><td>유지</td><td>2041 연금까지 5년 예산 확정</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<section id="week">
+  <div class="wrap">
+    <h2 class="sec">주간 시간표 (재학습기 2027 기본형)</h2>
+    <p class="sub">1차 청사진과 다른 점: 기술 7시간, 외국어 4시간. 출퇴근 왕복 약 2시간(일산–판교)을 외국어에 쓴다.</p>
+    <div class="tbl"><table>
+      <tr><th>시간대</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th><th>일</th></tr>
+      <tr><td class="k">06:00~06:40</td><td>모듈 학습</td><td>모듈 학습</td><td>모듈 학습</td><td>모듈 학습</td><td>모듈 학습</td><td>—</td><td>—</td></tr>
+      <tr><td class="k">출근 약 1시간</td><td>영어 쉐도잉</td><td>일본어 듣기</td><td>영어 쉐도잉</td><td>일본어 듣기</td><td>영어 쉐도잉</td><td>—</td><td>—</td></tr>
+      <tr><td class="k">점심 뒤 15분</td><td>영어 요약 작성</td><td>ECTC 논문 읽기</td><td>영어 요약 작성</td><td>논문 읽기</td><td>주간 노트 정리</td><td>—</td><td>—</td></tr>
+      <tr><td class="k">퇴근 약 1시간</td><td>영어 복습</td><td>영어 복습</td><td>자유</td><td>영어 복습</td><td>자유</td><td>—</td><td>—</td></tr>
+      <tr><td class="k">저녁</td><td>헬스 50분</td><td>수영 또는 스피닝 45분</td><td>영어 튜터 25분, 가족 저녁</td><td>헬스 50분</td><td>수영 또는 스피닝 45분, 가족 저녁</td><td>골프 연습장 60분(라운드 월 1~2회), 오후 가족, 저녁 모듈 학습 120분</td><td>영어 튜터 25분, 모듈 학습 90분, 주간 리뷰 30분, 가족</td></tr>
+    </table></div>
+    <div class="tbl"><table>
+      <tr><th>합계(주)</th><th>재학습·자격</th><th>외국어</th><th>운동</th><th>가족</th><th>수면</th></tr>
+      <tr><td class="k">2027 기본형</td><td>약 7시간</td><td>약 4시간</td><td>약 5시간</td><td>주말 반나절 2회 + 평일 저녁 2회</td><td>7시간(22:30~05:40)</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <h2 class="sec">마일스톤 체크리스트</h2>
+    <p class="sub">체크 상태는 이 화면에서만 유지된다. 보관하려면 인쇄하거나 PDF로 저장한다.</p>
+    <div class="progress"><i id="bar"></i></div>
+    <p class="small"><span id="cnt">0 / 0</span> 완료</p>
+    <div class="check">
+      <h4>2026 4분기</h4>
+      <label><input type="checkbox">본선(패키징 재료)·보험(OLED 평가)을 확정했다</label>
+      <label><input type="checkbox">'봉지·접착 신뢰성 체계' owner를 경영진과 합의했다</label>
+      <label><input type="checkbox">전이 자산 지도를 만들고 이력서를 그 언어로 다시 썼다</label>
+      <label><input type="checkbox">M1 패키징 개론을 끝냈다(용어집 200개·흐름도 5장)</label>
+      <label><input type="checkbox">KMEPS에 가입하고 단기과정 일정을 잡았다</label>
+      <label><input type="checkbox">검진·체력 기준선·연금 현황을 확인했다</label>
+      <h4>2027</h4>
+      <label><input type="checkbox">M2~M6 산출물 6건을 완성했다</label>
+      <label><input type="checkbox">특허 1건 이상을 출원했다</label>
+      <label><input type="checkbox">THS를 JEDEC 언어로 재정리한 보고서와 MQS v1을 배포했다</label>
+      <label><input type="checkbox">단기과정 1개 이상을 이수했다</label>
+      <label><input type="checkbox">이미 건너간 선배 3명 이상과 정보 인터뷰를 했다</label>
+      <label><input type="checkbox">OPIc 1차 응시, 12주 운동 3사이클을 마쳤다</label>
+      <h4>2028~2029 (이동 창)</h4>
+      <label><input type="checkbox">연봉 허용 하한과 오퍼 기준 4가지를 글로 적었다</label>
+      <label><input type="checkbox">KMEPS 발표 1회, 특허 2건째</label>
+      <label><input type="checkbox">헤드헌터 2명, 정보 인터뷰 5건, 회사군별 지원</label>
+      <label><input type="checkbox">OPIc IH, JLPT N4</label>
+      <label><input type="checkbox">ECTC 참석, 박사 여부 결정</label>
+      <label><input type="checkbox">이동 또는 잔류를 결정했다(2030.6 마감)</label>
+      <h4>2030~2031</h4>
+      <label><input type="checkbox">새 조직에 재료 인증 체계·신뢰성 표준을 이식했다</label>
+      <label><input type="checkbox">화공기술사에 합격했다(2031 목표)</label>
+      <label><input type="checkbox">평가위원 등록, CRE, 논문 1편</label>
+      <label><input type="checkbox">JLPT N3, 국제 학회 발표</label>
+      <label><input type="checkbox">만 55세 재검과 운동 재설계</label>
+      <h4>2032~2036</h4>
+      <label><input type="checkbox">특화 주제 1개로 교재 3권·논문 2편</label>
+      <label><input type="checkbox">JLPT N2, 외부 강의 5회 이상</label>
+      <label><input type="checkbox">개인사업자 또는 고문 계약 형태를 정했다</label>
+      <label><input type="checkbox">자문·강의 파이프 1개가 실제 소득을 만들었다</label>
+      <label><input type="checkbox">2036년, 파이프 3~4개가 돌아간다</label>
+    </div>
+  </div>
+</section>
+
+<section id="review">
+  <div class="wrap">
+    <h2 class="sec">분기 리뷰 다섯 질문</h2>
+    <p class="sub">분기 마지막 일요일 30분. 답은 한 줄씩.</p>
+    <ol>
+      <li>이번 분기, 이력서에 패키징 언어로 쓸 수 있는 줄이 하나 늘었는가(산출물·특허·발표·이수증)?</li>
+      <li>모듈 산출물은 계획대로 나왔는가? 안 나왔다면 학습이 아니라 산출물 정의가 문제였는가?</li>
+      <li>패키징 쪽 접점(재료사·OSAT·학회·선배)이 새로 생겼는가?</li>
+      <li>기술·언어·운동 시간이 계획의 70% 이상 실행됐는가? 무엇이 밀어냈는가?</li>
+      <li>60 이후 파이프 네 개 중 하나라도 한 걸음 가까워졌는가?</li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>전제와 주의</b>
+    <ul>
+      <li>나이는 만 나이(1976년생 기준 2026년 만 50세). 정년 65세 연장은 논의 중이므로 확정되면 지도의 끝(2036)을 옮긴다.</li>
+      <li>'2026년 시장 열기'는 2026년 9월 시점의 판단이다(EMC·언더필 국산화, 패키징 소재 스타트업 투자, 재직자 패키징 교육 확대). 2028년 이동 창을 열기 전에 다시 본다.</li>
+      <li>회사명은 회사군을 설명하기 위한 예시이며, 채용 여부·연봉 범위는 추정이다. 2028년에 정보 인터뷰로 확인한다.</li>
+      <li>보유 학위를 확인하지 못해 4-3에서 두 갈래로 나눴다. 출퇴근 왕복 약 2시간을 가정했다.</li>
+      <li>기술사·JLPT·OPIc·CRE·평가위원 등록의 응시 자격과 일정, 단기과정 운영 여부는 매년 기관 공지로 다시 확인한다.</li>
+      <li>재무 항목은 확인 목록이며 재무 조언이 아니다. 운동은 검진 결과에 따라 의사와 종목·강도를 정한다.</li>
+      <li>겸업·자문·외부 발표는 회사 취업규칙과 영업비밀·경업금지 조항을 먼저 확인한다.</li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var all=function(s){return Array.prototype.slice.call(document.querySelectorAll(s));};
+  function setAll(open){all('details').forEach(function(d){d.open=open;});}
+  document.getElementById('openAll').addEventListener('click',function(){setAll(true);});
+  document.getElementById('closeAll').addEventListener('click',function(){setAll(false);});
+  document.getElementById('printBtn').addEventListener('click',function(){setAll(true);setTimeout(function(){window.print();},150);});
+  window.addEventListener('beforeprint',function(){setAll(true);});
+
+  all('.tl .cell').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.getAttribute('data-target'));
+      if(!el)return;
+      var cat=el.closest('details.cat');
+      if(cat)cat.open=true;
+      el.open=true;
+      el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+
+  all('.nav a').forEach(function(a){
+    a.addEventListener('click',function(){
+      var el=document.querySelector(a.getAttribute('href'));
+      if(el&&el.tagName==='DETAILS')el.open=true;
+    });
+  });
+
+  var boxes=all('.check input[type=checkbox]');
+  var bar=document.getElementById('bar'),cnt=document.getElementById('cnt');
+  function upd(){
+    var n=boxes.filter(function(b){return b.checked;}).length;
+    bar.style.width=(boxes.length?100*n/boxes.length:0)+'%';
+    cnt.textContent=n+' / '+boxes.length;
+  }
+  boxes.forEach(function(b){b.addEventListener('change',upd);});
+  upd();
+})();
+</script>
+</body>
+</html>
